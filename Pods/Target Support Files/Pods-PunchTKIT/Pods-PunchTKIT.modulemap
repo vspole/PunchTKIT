@@ -1,0 +1,6 @@
+framework module Pods_PunchTKIT {
+  umbrella header "Pods-PunchTKIT-umbrella.h"
+
+  export *
+  module * { export * }
+}
