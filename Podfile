@@ -7,7 +7,10 @@ target 'PunchTKIT' do
 
   # Pods for PunchTKIT
 
-
+	pod 'Firebase' 
+	pod 'Firebase/Firestore' 
+	pod 'Firebase/Auth'  
+	pod 'FirebaseFirestoreSwift'
 
 
 
