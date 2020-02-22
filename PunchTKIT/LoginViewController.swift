@@ -71,9 +71,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 { (authResult, error) in
                   if let error = error
                   {
-                    // ...
+                    let alertController = UIAlertController(title: "Login Failed", message: "Login failed. Please try again", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
                     return
                   }
+                    UserDefaults.standard.set(self.phoneNumber, forKey: "PhoneNumber")
                     self.downloadInfo()
                 }
             }

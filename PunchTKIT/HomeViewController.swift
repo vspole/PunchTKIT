@@ -43,7 +43,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         storeTableView.delegate = self
         storeTableView.separatorStyle = .none
         storeTableView.separatorColor = self.storeTableView.backgroundColor
-
+        phoneNumber = UserDefaults.standard.string(forKey: "PhoneNumber")
         
         downloadData()
         
