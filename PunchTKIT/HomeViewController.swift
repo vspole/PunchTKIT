@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         storeTableView.dataSource = self
         storeTableView.delegate = self
         storeTableView.separatorStyle = .none
-        storeTableView.separatorColor = self.storeTableView.backgroundColor
+        //storeTableView.separatorColor = self.storeTableView.backgroundColor
         phoneNumber = UserDefaults.standard.string(forKey: "PhoneNumber")
         
         downloadData()
@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func addRefreshView()
     {
         refreshControl = UIRefreshControl()
-        refreshControl?.tintColor = UIColor.orange
+        refreshControl?.tintColor = UIColor(red: 241/255, green: 136/255, blue: 42/255, alpha: 1.0)
         refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         storeTableView.addSubview(refreshControl!)
     }
@@ -190,7 +190,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       {
         if let headerView = view as? UITableViewHeaderFooterView
         {
-            headerView.contentView.backgroundColor = .lightGray
+            headerView.contentView.backgroundColor = UIColor(red: 232/255, green: 231/255, blue: 225/255, alpha: 1.0)
         }
     }
     
