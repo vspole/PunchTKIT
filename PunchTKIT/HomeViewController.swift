@@ -33,6 +33,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var doneButton: UIButton?
     var imageView: UIImageView?
     var blurredEffectView: UIVisualEffectView?
+    var customView: UIView?
+    
     
     override func viewDidLoad()
     {
@@ -42,8 +44,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         storeTableView.dataSource = self
         storeTableView.delegate = self
         storeTableView.separatorStyle = .none
-        storeTableView.separatorColor = self.storeTableView.backgroundColor
-
+        //storeTableView.separatorColor = self.storeTableView.backgroundColor
+        phoneNumber = UserDefaults.standard.string(forKey: "PhoneNumber")
         
         downloadData()
         
@@ -81,7 +83,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func addRefreshView()
     {
         refreshControl = UIRefreshControl()
-        refreshControl?.tintColor = UIColor.orange
+        refreshControl?.tintColor = UIColor(red: 241/255, green: 136/255, blue: 42/255, alpha: 1.0)
         refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         storeTableView.addSubview(refreshControl!)
     }
@@ -138,6 +140,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         imageView?.removeFromSuperview()
         doneButton?.removeFromSuperview()
+        customView?.removeFromSuperview()
         blurredEffectView?.isHidden = true
         for subview in view.subviews {
             if subview is UIVisualEffectView {
@@ -160,8 +163,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         currentStore = storeArray[indexPath.section]
-        self.performSegue(withIdentifier: "tableToDetail", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+        showDetailView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -187,16 +190,74 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       {
         if let headerView = view as? UITableViewHeaderFooterView
         {
-            headerView.contentView.backgroundColor = .lightGray
+            headerView.contentView.backgroundColor = UIColor(red: 232/255, green: 231/255, blue: 225/255, alpha: 1.0)
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is TableDetailViewController
-        {
-            let vc = segue.destination as? TableDetailViewController
-            vc?.store = currentStore
+    
+    func showDetailView()
+    {
+        
+        db.collection("stores").whereField("StoreName", isEqualTo: currentStore.storeName ?? "").limit(to: 1).getDocuments()
+        { (querySnapshot, err) in
+            if let err = err
+            {
+                print("Error getting documents: \(err)")
+            }
+            else
+            {
+               
+                for document in querySnapshot!.documents
+                {
+                    print("\(document.documentID) => \(document.data())")
+                    
+                    let points = self.currentStore.points!
+                    let pointString = String(points) + " of "
+                    let pointsNeeded = document.data()["NumToRecieve"] as? Int
+                    UserDefaults.standard.set(pointString + String(pointsNeeded!) + " points ", forKey: "PointsString")
+                    UserDefaults.standard.set(document.data()["RedemptionValue"] as? String ?? " ", forKey: "RedeemString")
+                    UserDefaults.standard.set(self.currentStore.storeName, forKey: "StoreString")
+                    
+                    let blurEffect = UIBlurEffect(style: .dark)
+                    let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+                    blurredEffectView.frame = self.view.bounds
+                    
+                    let w = UIScreen.main.bounds.width
+                    let h = UIScreen.main.bounds.height
+                    
+                    self.customView = TableDetailView(frame: CGRect(x: 0, y: 0, width: 250, height: 175))
+                    self.customView!.center = CGPoint(x: (w/2), y: h/2)
+                    
+                    self.doneButton = UIButton()
+                    self.doneButton!.setTitle("Dismiss", for: .normal)
+                    self.doneButton!.frame = CGRect(x: w/2, y: h/2 + 600, width: 250, height: 50)
+                    self.doneButton!.center = CGPoint(x: w/2, y: h/2 + 150)
+
+                    self.doneButton!.tintColor = .white
+                    self.doneButton!.backgroundColor = UIColor(red: 241/255, green: 136/255, blue: 42/255, alpha: 1.0)
+                    self.doneButton!.addTarget(self, action: #selector(self.doneButtonAction), for: .touchUpInside)
+
+                    
+                    let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
+                    let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
+                    vibrancyEffectView.frame = self.customView!.bounds
+                    
+                    blurredEffectView.contentView.addSubview(vibrancyEffectView)
+
+                    self.view.addSubview(blurredEffectView)
+                    self.view.addSubview(self.doneButton!)
+                    self.view.addSubview(self.customView!)
+                }
+                
+            }
         }
+        
+
+
+        
+
     }
 
 }
+
+

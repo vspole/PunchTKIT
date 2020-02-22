@@ -10,12 +10,12 @@
 		099FC5A39526FED28E5F7E0B /* Pods_PunchTKIT_PunchTKITUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430254C18E905060DB08E0A3 /* Pods_PunchTKIT_PunchTKITUITests.framework */; };
 		429EF5BEFF1DB3C7A4BB78D8 /* Pods_PunchTKITTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1FB313E6228C3DC1CE1CE4 /* Pods_PunchTKITTests.framework */; };
 		BC96C944507705BE683B5B61 /* Pods_PunchTKIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2AAE9899EEC649A098A610C /* Pods_PunchTKIT.framework */; };
-		C9394E0823F24E620077A8D2 /* TableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9394E0723F24E620077A8D2 /* TableDetailViewController.swift */; };
 		C9394E0A23F253CE0077A8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9394E0923F253CE0077A8D2 /* LoginViewController.swift */; };
 		C97230A723F23BAE00B409D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97230A623F23BAE00B409D1 /* HomeViewController.swift */; };
 		C9798C2D23F37E16007571AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9798C2C23F37E16007571AD /* GoogleService-Info.plist */; };
 		C9798C3323F66361007571AD /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9798C3223F66361007571AD /* StoreTableViewCell.swift */; };
 		C9798C3C23FC7ABF007571AD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9798C3B23FC7ABF007571AD /* Launch Screen.storyboard */; };
+		C9815F032401AE6100AC518E /* TableDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9815F022401AE6100AC518E /* TableDetailView.swift */; };
 		C9E39D9223F2352F001992F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E39D9123F2352F001992F5 /* AppDelegate.swift */; };
 		C9E39D9423F2352F001992F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E39D9323F2352F001992F5 /* SceneDelegate.swift */; };
 		C9E39D9623F2352F001992F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E39D9523F2352F001992F5 /* ViewController.swift */; };
@@ -47,13 +47,13 @@
 		412D09EC8F55D9BC9A946EF9 /* Pods-PunchTKIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchTKIT.debug.xcconfig"; path = "Target Support Files/Pods-PunchTKIT/Pods-PunchTKIT.debug.xcconfig"; sourceTree = "<group>"; };
 		430254C18E905060DB08E0A3 /* Pods_PunchTKIT_PunchTKITUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PunchTKIT_PunchTKITUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B9DC479D5CAB7C04095595 /* Pods-PunchTKIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchTKIT.release.xcconfig"; path = "Target Support Files/Pods-PunchTKIT/Pods-PunchTKIT.release.xcconfig"; sourceTree = "<group>"; };
-		C9394E0723F24E620077A8D2 /* TableDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailViewController.swift; sourceTree = "<group>"; };
 		C9394E0923F253CE0077A8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C97230A623F23BAE00B409D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9798C2C23F37E16007571AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9798C3123F65861007571AD /* PunchTKIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PunchTKIT.entitlements; sourceTree = "<group>"; };
 		C9798C3223F66361007571AD /* StoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		C9798C3B23FC7ABF007571AD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C9815F022401AE6100AC518E /* TableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailView.swift; sourceTree = "<group>"; };
 		C9E39D8E23F2352F001992F5 /* PunchTKIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchTKIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E39D9123F2352F001992F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9E39D9323F2352F001992F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,12 +151,12 @@
 			isa = PBXGroup;
 			children = (
 				C9798C3123F65861007571AD /* PunchTKIT.entitlements */,
+				C9815F022401AE6100AC518E /* TableDetailView.swift */,
 				C9E39D9123F2352F001992F5 /* AppDelegate.swift */,
 				C9E39D9323F2352F001992F5 /* SceneDelegate.swift */,
 				C9E39D9523F2352F001992F5 /* ViewController.swift */,
 				C97230A623F23BAE00B409D1 /* HomeViewController.swift */,
 				C9E39D9723F2352F001992F5 /* Main.storyboard */,
-				C9394E0723F24E620077A8D2 /* TableDetailViewController.swift */,
 				C9798C3223F66361007571AD /* StoreTableViewCell.swift */,
 				C9798C2C23F37E16007571AD /* GoogleService-Info.plist */,
 				C9394E0923F253CE0077A8D2 /* LoginViewController.swift */,
@@ -427,10 +427,10 @@
 			files = (
 				C9394E0A23F253CE0077A8D2 /* LoginViewController.swift in Sources */,
 				C9E39D9623F2352F001992F5 /* ViewController.swift in Sources */,
-				C9394E0823F24E620077A8D2 /* TableDetailViewController.swift in Sources */,
 				C9E39D9223F2352F001992F5 /* AppDelegate.swift in Sources */,
 				C9E39D9423F2352F001992F5 /* SceneDelegate.swift in Sources */,
 				C9798C3323F66361007571AD /* StoreTableViewCell.swift in Sources */,
+				C9815F032401AE6100AC518E /* TableDetailView.swift in Sources */,
 				C97230A723F23BAE00B409D1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
