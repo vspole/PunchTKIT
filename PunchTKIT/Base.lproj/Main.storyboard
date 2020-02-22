@@ -198,68 +198,11 @@
                     <navigationItem key="navigationItem" id="SAh-VV-JiN"/>
                     <connections>
                         <outlet property="storeTableView" destination="yTL-4f-vuV" id="wg8-rn-B4B"/>
-                        <segue destination="gss-uH-022" kind="popoverPresentation" identifier="tableToDetail" popoverAnchorView="oae-Sd-zMJ" id="X2y-rB-BaI">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="273.91304347826087" y="122.54464285714285"/>
-        </scene>
-        <!--Table Detail View Controller-->
-        <scene sceneID="Die-0C-UXp">
-            <objects>
-                <viewController id="gss-uH-022" customClass="TableDetailViewController" customModule="PunchTKIT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tSn-Vd-P9Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-3v-kzZ">
-                                <rect key="frame" x="26" y="75" width="362" height="35"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRp-wg-tRm">
-                                <rect key="frame" x="26" y="360" width="362" height="34.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redemption" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuq-1d-Bve">
-                                <rect key="frame" x="26" y="644.5" width="362" height="34.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="dCw-3v-kzZ" firstAttribute="top" secondItem="jiI-0N-cAg" secondAttribute="top" constant="75" id="6ST-2H-RRP"/>
-                            <constraint firstItem="yuq-1d-Bve" firstAttribute="centerX" secondItem="jiI-0N-cAg" secondAttribute="centerX" id="GLH-M2-4ov"/>
-                            <constraint firstItem="dCw-3v-kzZ" firstAttribute="leading" secondItem="jiI-0N-cAg" secondAttribute="leading" constant="26" id="Kk9-0N-uel"/>
-                            <constraint firstItem="jiI-0N-cAg" firstAttribute="trailing" secondItem="FRp-wg-tRm" secondAttribute="trailing" constant="26" id="PMl-Hk-CwR"/>
-                            <constraint firstItem="FRp-wg-tRm" firstAttribute="leading" secondItem="jiI-0N-cAg" secondAttribute="leading" constant="26" id="PjC-I6-qlm"/>
-                            <constraint firstItem="dCw-3v-kzZ" firstAttribute="centerX" secondItem="jiI-0N-cAg" secondAttribute="centerX" id="U5u-hi-UWU"/>
-                            <constraint firstItem="yuq-1d-Bve" firstAttribute="leading" secondItem="jiI-0N-cAg" secondAttribute="leading" constant="26" id="V79-s9-2iS"/>
-                            <constraint firstItem="FRp-wg-tRm" firstAttribute="top" secondItem="dCw-3v-kzZ" secondAttribute="bottom" constant="250" id="aut-8S-9bO"/>
-                            <constraint firstItem="yuq-1d-Bve" firstAttribute="top" secondItem="FRp-wg-tRm" secondAttribute="bottom" constant="250" id="cxB-2c-POK"/>
-                            <constraint firstItem="FRp-wg-tRm" firstAttribute="centerX" secondItem="jiI-0N-cAg" secondAttribute="centerX" id="ftg-gj-qhY"/>
-                            <constraint firstItem="jiI-0N-cAg" firstAttribute="trailing" secondItem="yuq-1d-Bve" secondAttribute="trailing" constant="26" id="lTf-Ta-hQG"/>
-                            <constraint firstItem="jiI-0N-cAg" firstAttribute="trailing" secondItem="dCw-3v-kzZ" secondAttribute="trailing" constant="26" id="pht-T0-8m9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="jiI-0N-cAg"/>
-                    </view>
-                    <connections>
-                        <outlet property="pointsLabel" destination="FRp-wg-tRm" id="baY-5e-kAC"/>
-                        <outlet property="redeemLabel" destination="yuq-1d-Bve" id="mjr-pY-P9c"/>
-                        <outlet property="storeNameLabel" destination="dCw-3v-kzZ" id="1Xz-t3-SWt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1MP-rR-QwO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1182.608695652174" y="122.54464285714285"/>
         </scene>
     </scenes>
     <resources>
